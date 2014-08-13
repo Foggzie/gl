@@ -1,3 +1,9 @@
-# Don't include binaries
+# Binaries
 *.out
 *.o
+
+# Source folder
+source
+
+# Temp vim files
+*.swp
