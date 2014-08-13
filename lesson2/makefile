@@ -3,10 +3,10 @@ EXE=lesson2.o
 
 SRC=main.cpp
 
-CFLAGS=
+CFLAGS=-g
 LFLAGS=
 
 LIBS=-lGL -lGLU -lglut -lGLEW
 
 $(EXE) : $(SRC)
-	$(CC) $< $(LIBS) -o $@
+	$(CC) $(CFLAGS) $< $(LIBS) -o $@
