@@ -6,7 +6,7 @@ SRC=main.cpp
 CFLAGS=
 LFLAGS=
 
-LIBS=-lGL -lGLU -lglut
+LIBS=-lGL -lGLU -lglut -lGLEW
 
 $(EXE) : $(SRC)
 	$(CC) $< $(LIBS) -o $@

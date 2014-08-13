@@ -1,5 +1,6 @@
 // Put GL includes
 
+#include <GL/glew.h>
 #include <GL/glut.h>
 
 void RenderSceneCB();
@@ -10,9 +11,8 @@ int main(int argc, char** argv)
     
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
 
-    glutInitWindowSize(800, 600);
-    // glutInitWindowPosition(x, y);
-    glutCreateWindow("Tutorial 1");
+    glutInitWindowSize(600, 600);
+    glutCreateWindow("Tutorial 2");
 
     glutDisplayFunc(RenderSceneCB);
     
