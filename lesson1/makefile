@@ -9,4 +9,4 @@ LFLAGS=
 LIBS=-lGL -lGLU -lglut
 
 $(EXE) : $(SRC)
-	$(CC) $(CFLAGS) $(LIBS) $< -o $@
+	$(CC) $< $(LIBS) -o $@
