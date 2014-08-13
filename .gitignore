@@ -1,2 +1,2 @@
 # Don't include binaries
-*.o
+*.out  
