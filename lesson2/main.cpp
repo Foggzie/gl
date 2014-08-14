@@ -22,9 +22,13 @@ static void RenderSceneCB()
 {
     glClear(GL_COLOR_BUFFER_BIT);
     
-    glEnableVertexAttribArray(0);
+    //glEnableVertexAttribArray(0);
+    glEnableClientState(GL_VERTEX_ARRAY);
+
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+    
+    //glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+    glVertexPointer(3, GL_FLOAT, 0, 0);
 
     glDrawArrays(GL_POINTS, 0, 1);
 
@@ -42,7 +46,7 @@ int main(int argc, char** argv)
 {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-    glutInitWindowSize(600, 600);
+    glutInitWindowSize(200, 200);
     glutCreateWindow("Tutorial 2");
     
     InitializeGlutCallbacks();
