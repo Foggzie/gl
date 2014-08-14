@@ -10,8 +10,10 @@ GLuint VBO;
 
 static void CreateVertexBuffer()
 {
-    Vector3f Vertices[1];
-    Vertices[0] = Vector3f(0.5f, 0.5f, 0.0f);
+    Vector3f Vertices[3];
+    Vertices[0] = Vector3f(-1.0f, -1.0f, 0.0f);
+    Vertices[1] = Vector3f(1.0f, 0.0f, 0.0f);
+    Vertices[2] = Vector3f(0.0f, 1.0f, 0.0f);
 
     glGenBuffers(1, &VBO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -22,11 +24,15 @@ static void RenderSceneCB()
 {
     glClear(GL_COLOR_BUFFER_BIT);
     
-    glEnableVertexAttribArray(0);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+    //glEnableVertexAttribArray(0);
+    glEnableClientState(GL_VERTEX_ARRAY);
 
-    glDrawArrays(GL_POINTS, 0, 1);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    
+    //glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+    glVertexPointer(3, GL_FLOAT, 0, 0);
+
+    glDrawArrays(GL_TRIANGLES, 0, 3);
 
     glDisableVertexAttribArray(0);
 
@@ -42,8 +48,8 @@ int main(int argc, char** argv)
 {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-    glutInitWindowSize(600, 600);
-    glutCreateWindow("Tutorial 3");
+    glutInitWindowSize(200, 200);
+    glutCreateWindow("Tutorial 2");
     
     InitializeGlutCallbacks();
     
