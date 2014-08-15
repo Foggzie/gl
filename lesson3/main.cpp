@@ -34,7 +34,8 @@ static void RenderSceneCB()
 
     glDrawArrays(GL_TRIANGLES, 0, 3);
 
-    glDisableVertexAttribArray(0);
+    //glDisableVertexAttribArray(0);
+    glDisableClientState(GL_VERTEX_ARRAY);
 
     glutSwapBuffers();
 }
